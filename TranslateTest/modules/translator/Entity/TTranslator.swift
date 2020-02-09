@@ -8,6 +8,12 @@
 
 import Foundation
 
-class Translator: NSObject {
+struct Translator {
+    
+    var translate: String!
+    
+    init(translate: String) {
+        self.translate = translate
+    }
     
 }

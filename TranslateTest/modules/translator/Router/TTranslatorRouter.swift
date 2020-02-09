@@ -9,16 +9,17 @@
 import Foundation
 import UIKit
 
-class TTranslatorRouter: NSObject, TranslatorRouterProtocol {
+class TranslatorRouter {
     
-    func presentLanguageList(from view: UIViewController) {
-        
+    var viewController: UIViewController!
+    
+    init(view: UIViewController) {
+        self.viewController = view
     }
     
-    static func createTranslatorModule(TranslatorRef: TTranslatorView) {
-        
-    }
-    
+}
+
+extension TranslatorRouter: TranslatorRouterProtocol {
     
     
     

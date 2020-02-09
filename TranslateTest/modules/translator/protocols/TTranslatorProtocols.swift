@@ -11,36 +11,37 @@ import UIKit
 
 protocol TranslatorViewProtocol: class {
     
-    func showTranslate(with treanslate: Translator)
+    func showTranslate(with translate: String)
     
 }
 
 protocol TranslatorPresenterProtocol {
     
-    var interactor: TranslatorInputInteractorProtocol? {get set}
-    var view: TranslatorViewProtocol? {get set}
-    var router: TranslatorRouterProtocol? {get set}
+  //  var interactor: TranslatorInputInteractorProtocol? {get set}
+    //var view: TranslatorViewProtocol? {get set}
+    //var router: TranslatorRouterProtocol? {get set}
     
     func viewDidLoad()
-    func showTranslate(with translate: Translator, from view: UIViewController)
+    //func showTranslate(with translate: Translator, from view: UIViewController)
 }
 
 protocol TranslatorInputInteractorProtocol {
-    var presenter: TranslatorOutputInteractorProtocol? {get set}
+    func getTranslate() -> Translator
+    //var presenter: TranslatorOutputInteractorProtocol? {get set}
     
-    func getTranslate()
+  //  func getTranslate()
     
 }
 
 protocol TranslatorOutputInteractorProtocol {
     
-    func translateDidFetch(translate: Translator)
+    //func translateDidFetch(translate: Translator)
     
 }
 
 protocol TranslatorRouterProtocol {
     
-    func presentLanguageList(from view: UIViewController)
-    static func createTranslatorModule(TranslatorRef: TTranslatorView)
+//    func presentLanguageList(from view: UIViewController)
+//    static func createTranslatorModule(TranslatorRef: TTranslatorView)
     
 }

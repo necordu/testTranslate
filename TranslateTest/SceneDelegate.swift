@@ -14,6 +14,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        let translatorViewController = TranslatorModuleBuilder.build()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+      //  let storyboard = UIStoryboard.init(name: "Main", bundle
+        //tabBar.
+        //storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+        
+        let tabBar = UITabBarController()
+        tabBar.viewControllers = [translatorViewController, UIViewController(), UIViewController()]
+       // tabBar.selectedIndex = 0
+        
+        window?.rootViewController = tabBar
+        window?.makeKeyAndVisible()
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).

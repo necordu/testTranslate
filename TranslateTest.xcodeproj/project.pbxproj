@@ -31,6 +31,7 @@
 		909E347E23F0372F007E835F /* TTranslatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E347D23F0372F007E835F /* TTranslatorRouter.swift */; };
 		909E348023F03745007E835F /* TTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E347F23F03745007E835F /* TTranslator.swift */; };
 		909E348223F037C8007E835F /* TTranslatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E348123F037C8007E835F /* TTranslatorPresenter.swift */; };
+		909E348423F04E43007E835F /* TranslatorModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E348323F04E43007E835F /* TranslatorModuleBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		909E347D23F0372F007E835F /* TTranslatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTranslatorRouter.swift; sourceTree = "<group>"; };
 		909E347F23F03745007E835F /* TTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTranslator.swift; sourceTree = "<group>"; };
 		909E348123F037C8007E835F /* TTranslatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTranslatorPresenter.swift; sourceTree = "<group>"; };
+		909E348323F04E43007E835F /* TranslatorModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorModuleBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				909E344E23F0120D007E835F /* Entity */,
 				909E344D23F011FE007E835F /* Presenter */,
 				909E344C23F010E3007E835F /* view */,
+				909E348323F04E43007E835F /* TranslatorModuleBuilder.swift */,
 			);
 			path = translator;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				909E348423F04E43007E835F /* TranslatorModuleBuilder.swift in Sources */,
 				909E347A23F0351F007E835F /* TTranslatorProtocols.swift in Sources */,
 				909E345923F014B6007E835F /* TTranslatorView.swift in Sources */,
 				909E348023F03745007E835F /* TTranslator.swift in Sources */,

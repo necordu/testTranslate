@@ -9,12 +9,15 @@
 import UIKit
 
 class TTranslatorView: UIViewController {
-
+    
+    @IBOutlet var translationTextView: UITextView!
+    
+    var presenter: TranslatorPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        //TTranslatorRouter.cr
+        self.presenter.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
@@ -29,4 +32,13 @@ class TTranslatorView: UIViewController {
     }
     */
 
+}
+
+extension TTranslatorView: TranslatorViewProtocol {
+    
+    
+    func showTranslate(with translate: String) {
+        translationTextView.text = translate
+    }
+    
 }

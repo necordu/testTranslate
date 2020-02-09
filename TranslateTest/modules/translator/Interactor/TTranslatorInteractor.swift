@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+class TranslatorInteractor {
+    
+    
+    
+}
+
+
+extension TranslatorInteractor: TranslatorInputInteractorProtocol {
+    
+    func getTranslate() -> Translator {
+        return Translator(translate: "This is translation")
+    }
+    
+    
+    
+    
+}
