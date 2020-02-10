@@ -12,7 +12,11 @@ class TTranslatorView: UIViewController {
     
     @IBOutlet weak var trnslateTextView: UITextView!
     @IBOutlet weak var translationTextView: UITextView!
+    @IBOutlet weak var outLang: UIButton!
+    @IBOutlet weak var inLang: UIButton!
+    @IBOutlet weak var changeLang: UIButton!
     
+    var timer: Timer? = nil
     var presenter: TranslatorPresenterProtocol!
     
     override func viewDidLoad() {
@@ -48,21 +52,20 @@ extension TTranslatorView: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         
-        print("changedd")
+        
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(
+            timeInterval: 1.0,
+            target: self,
+            selector: #selector(sendToTranslate),
+            userInfo: ["textView": trnslateTextView],
+            repeats: false)
+       //perform(#selector(hel), with: nil, afterDelay: 1.0)
         
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        
-        print("end Editing")
-        
-    }
-    
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        
-        print("should end editing")
-        return true
-        
+    @objc func sendToTranslate() {
+        presenter.getTranslation(text: trnslateTextView.text, lang: "en-ru")
     }
     
 }

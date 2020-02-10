@@ -24,13 +24,29 @@ class TranslatePresenter {
 }
 
 extension TranslatePresenter: TranslatorPresenterProtocol {
+   
     func viewDidLoad() {
         
-        self.interactor.getTranslation(text: "Hello", lang: "en", completionBlock: {
+
+    }
+    
+    func getTranslation(text: String, lang: String) {
+        self.interactor.getTranslation(text: text, lang: "en-ru", completionBlock: {
             translate, error in
             
             if (error == nil){
-                self.view?.showTranslate(with: translate!.text.first!)
+                
+//                guard let text = translate?.text else {
+//                    print("error in translate")
+//                    return
+//                }
+                
+                if (translate?.code == 200) {
+                    self.view?.showTranslate(with: translate!.text.first!)
+                } else {
+                    self.view?.showTranslate(with: "")
+                        print("error - \(String(describing: translate?.code))")
+                }
                 // need to handle translate.code here
             } else {
                 //error handling here
@@ -38,7 +54,6 @@ extension TranslatePresenter: TranslatorPresenterProtocol {
             }
             
         })
-
     }
     
     

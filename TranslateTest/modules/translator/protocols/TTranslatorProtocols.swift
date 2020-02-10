@@ -22,6 +22,7 @@ protocol TranslatorPresenterProtocol {
     //var router: TranslatorRouterProtocol? {get set}
     
     func viewDidLoad()
+    func getTranslation(text: String, lang: String)
     //func showTranslate(with translate: Translator, from view: UIViewController)
 }
 
