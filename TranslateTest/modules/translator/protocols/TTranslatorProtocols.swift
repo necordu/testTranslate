@@ -26,7 +26,7 @@ protocol TranslatorPresenterProtocol {
 }
 
 protocol TranslatorInputInteractorProtocol {
-    func getTranslate() -> Translator
+    func getTranslation(text: String, lang: String, completionBlock: @escaping(Translator?, Error?) -> ()) -> Void
     //var presenter: TranslatorOutputInteractorProtocol? {get set}
     
   //  func getTranslate()

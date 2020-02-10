@@ -17,15 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let translatorViewController = TranslatorModuleBuilder.build()
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-      //  let storyboard = UIStoryboard.init(name: "Main", bundle
-        //tabBar.
-        //storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
-        
         let tabBar = UITabBarController()
         tabBar.viewControllers = [translatorViewController, UIViewController(), UIViewController()]
-       // tabBar.selectedIndex = 0
         
         window?.rootViewController = tabBar
         window?.makeKeyAndVisible()

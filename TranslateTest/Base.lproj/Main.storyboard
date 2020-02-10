@@ -147,6 +147,9 @@
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="46f-UX-lFr" id="XlZ-Rr-PEC"/>
+                                        </connections>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfc-fz-Eph">
                                         <rect key="frame" x="5" y="195" width="384" height="1"/>
@@ -200,6 +203,7 @@
                     <tabBarItem key="tabBarItem" title="Переводчик" id="Dt1-jk-CqF"/>
                     <connections>
                         <outlet property="translationTextView" destination="MJK-ef-BbH" id="M4F-LE-oik"/>
+                        <outlet property="trnslateTextView" destination="htF-9k-OYK" id="Azu-92-H1r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1N-dz-cwn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

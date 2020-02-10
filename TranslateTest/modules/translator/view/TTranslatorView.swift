@@ -10,7 +10,8 @@ import UIKit
 
 class TTranslatorView: UIViewController {
     
-    @IBOutlet var translationTextView: UITextView!
+    @IBOutlet weak var trnslateTextView: UITextView!
+    @IBOutlet weak var translationTextView: UITextView!
     
     var presenter: TranslatorPresenterProtocol!
     
@@ -39,6 +40,29 @@ extension TTranslatorView: TranslatorViewProtocol {
     
     func showTranslate(with translate: String) {
         translationTextView.text = translate
+    }
+    
+}
+
+extension TTranslatorView: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        
+        print("changedd")
+        
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        print("end Editing")
+        
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        
+        print("should end editing")
+        return true
+        
     }
     
 }

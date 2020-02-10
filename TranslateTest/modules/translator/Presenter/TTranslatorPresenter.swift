@@ -26,9 +26,19 @@ class TranslatePresenter {
 extension TranslatePresenter: TranslatorPresenterProtocol {
     func viewDidLoad() {
         
-        let translator = self.interactor.getTranslate()
-        print(translator.translate ?? "Error")
-        view?.showTranslate(with: translator.translate)
+        self.interactor.getTranslation(text: "Hello", lang: "en", completionBlock: {
+            translate, error in
+            
+            if (error == nil){
+                self.view?.showTranslate(with: translate!.text.first!)
+                // need to handle translate.code here
+            } else {
+                //error handling here
+                print(error?.localizedDescription as Any)
+            }
+            
+        })
+
     }
     
     
