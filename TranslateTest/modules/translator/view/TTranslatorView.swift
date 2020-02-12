@@ -14,7 +14,13 @@ class TTranslatorView: UIViewController {
     @IBOutlet weak var translationTextView: UITextView!
     @IBOutlet weak var outLang: UIButton!
     @IBOutlet weak var inLang: UIButton!
-    @IBOutlet weak var changeLang: UIButton!
+    @IBOutlet weak var changeLangButton: UIButton!
+    
+    // ???
+    var outText: String!
+    var inText: String!
+    
+    var translateDirection: translateDirection!
     
     var timer: Timer? = nil
     var presenter: TranslatorPresenterProtocol!
@@ -22,11 +28,63 @@ class TTranslatorView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        inText = inLang.titleLabel!.text
+        outText = outLang.titleLabel!.text
+        
         self.presenter.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
+    
+    func getTranslation_coreData() {
+            
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+            
+        var tasks: [Any] = []
+        do {
+            tasks = try managedContext.fetch(Dictionary.fetchRequest())
+        } catch {
+            print("Fetching Failed")
+        }
+         
+        //let dictionary = tasks.first as! Dictionary
+        for task in tasks {
+            for word in (task as! Dictionary).words! {
+                print((word as! Word).name!)
+                print((word as! Word).translation!)
+            }
+        }
+            
+        
+    }
+    
+    @IBAction func changeLang(_ sender: Any) {
+        
+        switch (sender as! UIButton).tag {
+        case 0:
+            presenter.presentLanguages()
+            translateDirection = .inTr
+            break
+        case 1:
+            
+            (inText, outText) = (outText, inText)
+            let temp = outLang.titleLabel!.text
+            outLang.setTitle(inLang.titleLabel!.text, for: .normal)
+            inLang.setTitle(temp, for: .normal)
+            
+            self.sendToTranslate()
+            break
+        case 2:
+            presenter.presentLanguages()
+            translateDirection = .outTr
+            break
+        default:
+            break
+            
+    }
 
+}
+    
     /*
     // MARK: - Navigation
 
@@ -52,7 +110,6 @@ extension TTranslatorView: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         
-        
         timer?.invalidate()
         timer = Timer.scheduledTimer(
             timeInterval: 1.0,
@@ -60,12 +117,41 @@ extension TTranslatorView: UITextViewDelegate {
             selector: #selector(sendToTranslate),
             userInfo: ["textView": trnslateTextView],
             repeats: false)
-       //perform(#selector(hel), with: nil, afterDelay: 1.0)
         
     }
     
-    @objc func sendToTranslate() {
-        presenter.getTranslation(text: trnslateTextView.text, lang: "en-ru")
+    @objc private func sendToTranslate() {
+        
+        presenter.getTranslation(
+            text: trnslateTextView.text,
+            lang: presenter.langDefine(textLangIn: inText, textLangOut: outText))
+    }
+    
+    
+}
+//show language (?Should be in presenter?)
+extension TTranslatorView: LangDelegate {
+    func changeLanguage(language: String) {
+        print(language)
+        switch translateDirection {
+        case .inTr:
+            if language != outLang.titleLabel?.text {
+                inLang.setTitle(language, for: .normal)
+                inText = language
+            } else {
+                self.changeLang(changeLangButton!)
+            }
+        case .outTr:
+            if language != inLang.titleLabel?.text {
+                outLang.setTitle(language, for: .normal)
+                outText = language
+            } else {
+                self.changeLang(changeLangButton!)
+            }
+        default:
+            break
+        }
+        self.sendToTranslate()
     }
     
 }

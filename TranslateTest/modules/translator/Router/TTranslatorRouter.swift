@@ -11,9 +11,9 @@ import UIKit
 
 class TranslatorRouter {
     
-    var viewController: UIViewController!
+    var viewController: TTranslatorView!
     
-    init(view: UIViewController) {
+    init(view: TTranslatorView) {
         self.viewController = view
     }
     
@@ -21,6 +21,11 @@ class TranslatorRouter {
 
 extension TranslatorRouter: TranslatorRouterProtocol {
     
-    
+    func presentLanguageList() {
+        
+        let languagesViewController = LanguageModuleBuilder.build(delegate: self.viewController)
+        self.viewController.present(languagesViewController, animated: true, completion: nil)
+        
+    }
     
 }

@@ -8,9 +8,26 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class TranslatorInteractor {
     
+   /* func deleteAllData(_ entity:String) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let results = try appDelegate.persistentContainer.viewContext.fetch(fetchRequest)
+            for object in results {
+                guard let objectData = object as? NSManagedObject else {continue}
+                appDelegate.persistentContainer.viewContext.delete(objectData)
+            }
+        } catch let error {
+            print("Detele all data in \(entity) error :", error)
+        }
+    }*/
  
     
 }
@@ -21,9 +38,9 @@ extension TranslatorInteractor: TranslatorInputInteractorProtocol {
     
     func getTranslation(text: String, lang: String, completionBlock: @escaping(Translator?, Error?) -> ()) -> Void {
         
-        let url = URL(string: "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20200210T074258Z.cfd54b2e06114303.8736ba0ddd6032ed94136635fb167a6e42dc6cb1&text=\(text)&lang=\(lang)")!
+        let url = URL(string: "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20200210T074258Z.cfd54b2e06114303.8736ba0ddd6032ed94136635fb167a6e42dc6cb1&text=\(text)&lang=\(lang)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         let session = URLSession.shared
-        let task = session.dataTask(with: url, completionHandler:  { data, response, error in
+        let task = session.dataTask(with: url!, completionHandler:  { data, response, error in
 
             if error != nil || data == nil {
                 print("Client error!")
@@ -38,7 +55,6 @@ extension TranslatorInteractor: TranslatorInputInteractorProtocol {
             }
 
             do {
-              //  let json = try JSONSerialization.jsonObject(with: data!, options: [])
                 let translation = try JSONDecoder().decode(Translator.self, from: data!)
                 DispatchQueue.main.async {
                     completionBlock(translation, nil)
@@ -52,6 +68,38 @@ extension TranslatorInteractor: TranslatorInputInteractorProtocol {
         })
 
         task.resume()
+    }
+    
+    func saveTranslation(name: String?, translation: String?){
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        privateContext.persistentStoreCoordinator = managedContext.persistentStoreCoordinator
+        privateContext.perform {
+            
+            let word = Word(context: privateContext)
+            
+            let dictionary = Dictionary(context: privateContext)
+            
+            let words = dictionary.mutableSetValue(forKey: #keyPath(Dictionary.words))
+            
+            guard let name = name, let translation = translation else { return}
+            word.name = name
+            word.translation = translation
+            
+            words.add(word)
+            
+            do{
+                try privateContext.save()
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
+            
+        }
+        
     }
     
 }

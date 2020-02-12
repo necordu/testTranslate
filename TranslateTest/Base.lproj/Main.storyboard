@@ -112,30 +112,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bw-aX-Trn">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bw-aX-Trn">
                                 <rect key="frame" x="194.66666666666666" y="54" width="25" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="dPY-U4-V0D"/>
                                     <constraint firstAttribute="width" constant="25" id="jFj-oY-RB0"/>
                                 </constraints>
                                 <state key="normal" image="reverArrow.png"/>
+                                <connections>
+                                    <action selector="changeLang:" destination="46f-UX-lFr" eventType="touchUpInside" id="Alc-6W-win"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypz-Yh-t9I">
                                 <rect key="frame" x="5" y="47.666666666666664" width="184.66666666666666" height="29.999999999999993"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Русский">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3HB-WS-3Jl" kind="presentation" id="40o-2J-ZGZ"/>
+                                    <action selector="changeLang:" destination="46f-UX-lFr" eventType="touchUpInside" id="ZV7-Ew-NoA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmZ-Cy-lpd">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmZ-Cy-lpd">
                                 <rect key="frame" x="224.66666666666663" y="47.666666666666664" width="184.33333333333337" height="29.999999999999993"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Английский">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3HB-WS-3Jl" kind="presentation" id="VSu-my-rBK"/>
+                                    <action selector="changeLang:" destination="46f-UX-lFr" eventType="touchUpInside" id="AbF-mi-BFT"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Unn-he-oH3">
@@ -148,7 +151,7 @@
                                             <constraint firstAttribute="height" constant="1" id="udz-dm-L19"/>
                                         </constraints>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MJK-ef-BbH">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MJK-ef-BbH">
                                         <rect key="frame" x="5" y="206" width="384" height="216"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -201,7 +204,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Переводчик" id="Dt1-jk-CqF"/>
                     <connections>
-                        <outlet property="changeLang" destination="8bw-aX-Trn" id="J6R-Ee-DkF"/>
+                        <outlet property="changeLangButton" destination="8bw-aX-Trn" id="Aao-kb-e0a"/>
                         <outlet property="inLang" destination="Ypz-Yh-t9I" id="EbQ-8F-5gc"/>
                         <outlet property="outLang" destination="LmZ-Cy-lpd" id="ol8-vF-NBm"/>
                         <outlet property="translationTextView" destination="MJK-ef-BbH" id="M4F-LE-oik"/>
@@ -215,13 +218,13 @@
         <!--Languages View-->
         <scene sceneID="LYD-5W-9vi">
             <objects>
-                <viewController id="3HB-WS-3Jl" customClass="TLanguagesView" customModule="TranslateTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LanguageViewController" id="3HB-WS-3Jl" customClass="TLanguagesView" customModule="TranslateTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jFR-E6-Lo3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIl-PL-Wzh">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuI-fs-hwx">
                                         <rect key="frame" x="142.66666666666669" y="15" width="128.66666666666669" height="21"/>
@@ -234,6 +237,9 @@
                                         <state key="normal" image="cancelButton.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelLanguages:" destination="3HB-WS-3Jl" eventType="touchUpInside" id="fkb-SW-87Z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.8666666666666667" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,10 +252,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7hM-bq-NvA">
-                                <rect key="frame" x="0.0" y="59" width="414" height="749"/>
+                                <rect key="frame" x="0.0" y="103" width="414" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kHd-Pb-rQB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="langCell" id="kHd-Pb-rQB" customClass="langCell" customModule="TranslateTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kHd-Pb-rQB" id="m1i-uA-6Jm">
@@ -269,8 +275,15 @@
                                                 <constraint firstItem="oaR-N2-Zv7" firstAttribute="centerY" secondItem="m1i-uA-6Jm" secondAttribute="centerY" id="qAI-Cy-dmu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="langNameLabel" destination="oaR-N2-Zv7" id="mX4-dS-M3b"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3HB-WS-3Jl" id="zOH-lx-hPB"/>
+                                    <outlet property="delegate" destination="3HB-WS-3Jl" id="Njs-fd-wT1"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -285,6 +298,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zgk-BI-a3O"/>
                     </view>
+                    <connections>
+                        <outlet property="languageTableView" destination="7hM-bq-NvA" id="qa1-4J-YSG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59j-c8-qVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -332,7 +348,4 @@
         <image name="reverArrow.png" width="25" height="11"/>
         <image name="trash.png" width="16" height="20"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="40o-2J-ZGZ"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+
+protocol LangDelegate: class {
+    func changeLanguage(language: String)
+}
+
 protocol TranslatorViewProtocol: class {
     
     func showTranslate(with translate: String)
@@ -17,31 +22,23 @@ protocol TranslatorViewProtocol: class {
 
 protocol TranslatorPresenterProtocol {
     
-  //  var interactor: TranslatorInputInteractorProtocol? {get set}
-    //var view: TranslatorViewProtocol? {get set}
-    //var router: TranslatorRouterProtocol? {get set}
-    
     func viewDidLoad()
     func getTranslation(text: String, lang: String)
-    //func showTranslate(with translate: Translator, from view: UIViewController)
+    func langDefine(textLangIn:String, textLangOut: String) -> String
+    func presentLanguages()
+    
 }
 
 protocol TranslatorInputInteractorProtocol {
+    
     func getTranslation(text: String, lang: String, completionBlock: @escaping(Translator?, Error?) -> ()) -> Void
-    //var presenter: TranslatorOutputInteractorProtocol? {get set}
-    
-  //  func getTranslate()
-    
-}
-
-protocol TranslatorOutputInteractorProtocol {
-    
-    //func translateDidFetch(translate: Translator)
+    func saveTranslation(name: String?, translation: String?)
     
 }
 
 protocol TranslatorRouterProtocol {
     
+    func presentLanguageList()
 //    func presentLanguageList(from view: UIViewController)
 //    static func createTranslatorModule(TranslatorRef: TTranslatorView)
     

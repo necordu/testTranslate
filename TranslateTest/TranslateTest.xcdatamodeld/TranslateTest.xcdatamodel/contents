@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="DictionaryHistory" representedClassName="DictionaryHistory" syncable="YES" codeGenerationType="class">
-        <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="translate" optional="YES" attributeType="String"/>
+    <entity name="Dictionary" representedClassName="Dictionary" syncable="YES" codeGenerationType="class">
+        <relationship name="words" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="dictionary" inverseEntity="Word"/>
     </entity>
     <entity name="Languages" representedClassName="Languages" syncable="YES" codeGenerationType="class">
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Word" representedClassName="Word" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="translation" optional="YES" attributeType="String"/>
+        <relationship name="dictionary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dictionary" inverseName="words" inverseEntity="Dictionary"/>
+    </entity>
     <elements>
-        <element name="DictionaryHistory" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Languages" positionX="-54" positionY="9" width="128" height="58"/>
+        <element name="Dictionary" positionX="-221.875" positionY="40.0859375" width="128" height="58"/>
+        <element name="Languages" positionX="142.56640625" positionY="-80.96484375" width="128" height="58"/>
+        <element name="Word" positionX="19.07421875" positionY="29.2734375" width="128" height="88"/>
     </elements>
 </model>
