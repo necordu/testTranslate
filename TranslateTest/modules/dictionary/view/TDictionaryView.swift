@@ -13,6 +13,7 @@ class TDictionaryView: UIViewController {
     var presenter: DictPresenterProtocol!
     
     var timer: Timer? = nil
+    var searchText: String = ""
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var cartButton: UIButton!
@@ -23,6 +24,11 @@ class TDictionaryView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        historyTableView.keyboardDismissMode = .onDrag
+        
+        //WHERE put this in VIPER?
+        NotificationCenter.default.addObserver(self, selector: #selector(search), name: .didCoreDataChanged, object: nil)
 
         presenter.viewDidLoad()
     }
@@ -36,6 +42,11 @@ class TDictionaryView: UIViewController {
         }))
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .didCoreDataChanged, object: nil)
     }
     
 }
@@ -58,12 +69,24 @@ extension TDictionaryView: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+        self.searchText = searchText
+        
         timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1.0,
+                                     target: self,
+                                     selector: #selector(search),
+                                     userInfo: ["searchBar": searchBar],
+                                     repeats: false)
+      //  timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { (timer) in
+        //    self.presenter.getHistory(search: searchText)
+    //    })
         
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { (timer) in
-            self.presenter.getHistory(search: searchText)
-        })
         
+    }
+    
+    @objc func search () {
+        
+        self.presenter.getHistory(search: searchText)
         
     }
     
@@ -84,11 +107,6 @@ extension TDictionaryView: UITableViewDataSource {
         cell.nameLabel.text = word.name
         cell.translationLabel.text = word.translation
         
-        //cell.nameLabel = word.
-//        guard let languages = langArray else {return UITableViewCell()}
-//        let language = languages[indexPath.row]
-//
-//        cell.langNameLabel.text = (language as! String)
         
         return cell
         

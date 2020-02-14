@@ -19,6 +19,7 @@
 		5E6DA59223F6818100692DA1 /* DictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA59123F6818100692DA1 /* DictionaryInteractor.swift */; };
 		5E6DA59423F6818D00692DA1 /* DictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA59323F6818D00692DA1 /* DictionaryRouter.swift */; };
 		5E6DA59623F68EC400692DA1 /* DictionaryTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA59523F68EC400692DA1 /* DictionaryTranslation.swift */; };
+		5E6DA59B23F6C0BB00692DA1 /* DictResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA59A23F6C0BB00692DA1 /* DictResources.swift */; };
 		909E343323F0070A007E835F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E343223F0070A007E835F /* AppDelegate.swift */; };
 		909E343523F0070A007E835F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E343423F0070A007E835F /* SceneDelegate.swift */; };
 		909E343723F0070A007E835F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E343623F0070A007E835F /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 		5E6DA59123F6818100692DA1 /* DictionaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryInteractor.swift; sourceTree = "<group>"; };
 		5E6DA59323F6818D00692DA1 /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
 		5E6DA59523F68EC400692DA1 /* DictionaryTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTranslation.swift; sourceTree = "<group>"; };
+		5E6DA59A23F6C0BB00692DA1 /* DictResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictResources.swift; sourceTree = "<group>"; };
 		909E342F23F0070A007E835F /* TranslateTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TranslateTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		909E343223F0070A007E835F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		909E343423F0070A007E835F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,14 @@
 			path = protocols;
 			sourceTree = "<group>";
 		};
+		5E6DA59723F6C08D00692DA1 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				5E6DA59A23F6C0BB00692DA1 /* DictResources.swift */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		909E342623F00709007E835F = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +249,7 @@
 		909E344B23F010DB007E835F /* dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				5E6DA59723F6C08D00692DA1 /* resources */,
 				5E6DA58C23F67CE200692DA1 /* protocols */,
 				5E6DA58B23F67CDB00692DA1 /* Entity */,
 				5E6DA58A23F67CD300692DA1 /* Router */,
@@ -473,6 +484,7 @@
 				5E6DA57F23F3E2CE00692DA1 /* LangugaePresenter.swift in Sources */,
 				909E348223F037C8007E835F /* TTranslatorPresenter.swift in Sources */,
 				5E6DA58E23F67FD900692DA1 /* DictionaryProtocols.swift in Sources */,
+				5E6DA59B23F6C0BB00692DA1 /* DictResources.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

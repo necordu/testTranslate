@@ -101,6 +101,7 @@ extension TTranslatorView: UITextViewDelegate {
         presenter.getTranslation(
             text: trnslateTextView.text,
             lang: presenter.langDefine(textLangIn: inText, textLangOut: outText))
+        
     }
     
     

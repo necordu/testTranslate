@@ -61,7 +61,7 @@ extension TranslatePresenter: TranslatorPresenterProtocol {
     }
     
     func getTranslation(text: String, lang: String) {
-        print(lang)
+        
         self.interactor.getTranslation(text: text, lang: lang, completionBlock: { [weak self]
             translate, error in
             
@@ -83,7 +83,6 @@ extension TranslatePresenter: TranslatorPresenterProtocol {
                     self?.view?.showTranslate(with: "")
                         print("error - \(String(describing: translateObj.code))")
                 }
-                // need to handle translate.code here
             } else {
                 //error handling here
                 print(error?.localizedDescription as Any)
