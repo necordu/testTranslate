@@ -98,6 +98,7 @@ extension TTranslatorView: UITextViewDelegate {
     
     @objc private func sendToTranslate() {
         
+        trnslateTextView.resignFirstResponder()
         presenter.getTranslation(
             text: trnslateTextView.text,
             lang: presenter.langDefine(textLangIn: inText, textLangOut: outText))

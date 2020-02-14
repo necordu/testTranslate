@@ -78,7 +78,9 @@ extension TranslatorInteractor: TranslatorInputInteractorProtocol {
             do{
                 try privateContext.save()
                 #warning("CHECK PLACE FOR NOTIFICATION")
-                NotificationCenter.default.post(name: .didCoreDataChanged, object: nil)
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .didCoreDataChanged, object: nil)
+                }
             } catch let error as NSError {
                 print("Could not save. \(error), \(error.userInfo)")
             }
