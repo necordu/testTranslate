@@ -34,30 +34,6 @@ class TTranslatorView: UIViewController {
         self.presenter.viewDidLoad()
     }
     
-    
-    func getTranslation_coreData() {
-            
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-            
-        var tasks: [Any] = []
-        do {
-            tasks = try managedContext.fetch(Dictionary.fetchRequest())
-        } catch {
-            print("Fetching Failed")
-        }
-         
-        //let dictionary = tasks.first as! Dictionary
-        for task in tasks {
-            for word in (task as! Dictionary).words! {
-                print((word as! Word).name!)
-                print((word as! Word).translation!)
-            }
-        }
-            
-        
-    }
-    
     @IBAction func changeLang(_ sender: Any) {
         
         switch (sender as! UIButton).tag {

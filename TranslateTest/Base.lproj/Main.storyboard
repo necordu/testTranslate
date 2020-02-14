@@ -10,7 +10,7 @@
         <!--Словарь-->
         <scene sceneID="Fdc-ca-P4I">
             <objects>
-                <viewController id="J4R-zn-eae" customClass="TDictionaryView" customModule="TranslateTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DictionaryViewController" id="J4R-zn-eae" customClass="TDictionaryView" customModule="TranslateTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E6a-jT-OFx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,6 +31,9 @@
                                             <constraint firstAttribute="height" constant="30" id="zkW-4M-XLa"/>
                                         </constraints>
                                         <state key="normal" image="trash.png"/>
+                                        <connections>
+                                            <action selector="clearDB:" destination="J4R-zn-eae" eventType="touchUpInside" id="Tvg-1S-cNE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.8666666666666667" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,7 +53,7 @@
                                 <rect key="frame" x="0.0" y="139" width="414" height="674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tt7-Zn-fmd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" id="tt7-Zn-fmd" customClass="HistoryCell" customModule="TranslateTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tt7-Zn-fmd" id="gbA-Yd-00e">
@@ -79,8 +82,16 @@
                                                 <constraint firstItem="olT-hn-vcS" firstAttribute="width" secondItem="gbA-Yd-00e" secondAttribute="width" multiplier="0.5" constant="-20" id="gA1-dJ-VXg"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="Yk4-FQ-l9T" id="2L1-m2-IZe"/>
+                                            <outlet property="translationLabel" destination="olT-hn-vcS" id="VUq-6h-tpB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="J4R-zn-eae" id="tYV-Cb-EnV"/>
+                                    <outlet property="delegate" destination="J4R-zn-eae" id="e4v-UC-kTy"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,6 +110,11 @@
                         <viewLayoutGuide key="safeArea" id="NzW-tg-vqt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Словарь" id="P98-yN-JMK"/>
+                    <connections>
+                        <outlet property="cartButton" destination="9Xp-Sx-Wlw" id="i0u-Wy-cic"/>
+                        <outlet property="historyTableView" destination="qw6-lE-xyF" id="jH9-64-KwA"/>
+                        <outlet property="searchBar" destination="zmh-Xb-4Ik" id="dRP-jB-YHw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3c-7P-nAb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

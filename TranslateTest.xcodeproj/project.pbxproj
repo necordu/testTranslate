@@ -13,6 +13,12 @@
 		5E6DA58123F3E2E300692DA1 /* LanguageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58023F3E2E300692DA1 /* LanguageInteractor.swift */; };
 		5E6DA58323F3E30200692DA1 /* LanguageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58223F3E30200692DA1 /* LanguageRouter.swift */; };
 		5E6DA58523F4275B00692DA1 /* resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58423F4275B00692DA1 /* resources.swift */; };
+		5E6DA58723F67CB500692DA1 /* DictionaryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58623F67CB500692DA1 /* DictionaryBuilder.swift */; };
+		5E6DA58E23F67FD900692DA1 /* DictionaryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58D23F67FD900692DA1 /* DictionaryProtocols.swift */; };
+		5E6DA59023F6814000692DA1 /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58F23F6814000692DA1 /* DictionaryPresenter.swift */; };
+		5E6DA59223F6818100692DA1 /* DictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA59123F6818100692DA1 /* DictionaryInteractor.swift */; };
+		5E6DA59423F6818D00692DA1 /* DictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA59323F6818D00692DA1 /* DictionaryRouter.swift */; };
+		5E6DA59623F68EC400692DA1 /* DictionaryTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA59523F68EC400692DA1 /* DictionaryTranslation.swift */; };
 		909E343323F0070A007E835F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E343223F0070A007E835F /* AppDelegate.swift */; };
 		909E343523F0070A007E835F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E343423F0070A007E835F /* SceneDelegate.swift */; };
 		909E343723F0070A007E835F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E343623F0070A007E835F /* ViewController.swift */; };
@@ -47,6 +53,12 @@
 		5E6DA58023F3E2E300692DA1 /* LanguageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageInteractor.swift; sourceTree = "<group>"; };
 		5E6DA58223F3E30200692DA1 /* LanguageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRouter.swift; sourceTree = "<group>"; };
 		5E6DA58423F4275B00692DA1 /* resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resources.swift; sourceTree = "<group>"; };
+		5E6DA58623F67CB500692DA1 /* DictionaryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryBuilder.swift; sourceTree = "<group>"; };
+		5E6DA58D23F67FD900692DA1 /* DictionaryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryProtocols.swift; sourceTree = "<group>"; };
+		5E6DA58F23F6814000692DA1 /* DictionaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPresenter.swift; sourceTree = "<group>"; };
+		5E6DA59123F6818100692DA1 /* DictionaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryInteractor.swift; sourceTree = "<group>"; };
+		5E6DA59323F6818D00692DA1 /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
+		5E6DA59523F68EC400692DA1 /* DictionaryTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTranslation.swift; sourceTree = "<group>"; };
 		909E342F23F0070A007E835F /* TranslateTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TranslateTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		909E343223F0070A007E835F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		909E343423F0070A007E835F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +138,46 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		5E6DA58823F67CC400692DA1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5E6DA58F23F6814000692DA1 /* DictionaryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5E6DA58923F67CC900692DA1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5E6DA59123F6818100692DA1 /* DictionaryInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5E6DA58A23F67CD300692DA1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5E6DA59323F6818D00692DA1 /* DictionaryRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		5E6DA58B23F67CDB00692DA1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				5E6DA59523F68EC400692DA1 /* DictionaryTranslation.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		5E6DA58C23F67CE200692DA1 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5E6DA58D23F67FD900692DA1 /* DictionaryProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
 		909E342623F00709007E835F = {
 			isa = PBXGroup;
 			children = (
@@ -187,11 +239,13 @@
 		909E344B23F010DB007E835F /* dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				909E345523F01289007E835F /* Interactor */,
-				909E345423F01287007E835F /* Router */,
-				909E345323F01284007E835F /* Entity */,
-				909E345223F01282007E835F /* Presenter */,
+				5E6DA58C23F67CE200692DA1 /* protocols */,
+				5E6DA58B23F67CDB00692DA1 /* Entity */,
+				5E6DA58A23F67CD300692DA1 /* Router */,
+				5E6DA58923F67CC900692DA1 /* Interactor */,
+				5E6DA58823F67CC400692DA1 /* Presenter */,
 				909E345123F01280007E835F /* view */,
+				5E6DA58623F67CB500692DA1 /* DictionaryBuilder.swift */,
 			);
 			path = dictionary;
 			sourceTree = "<group>";
@@ -242,34 +296,6 @@
 				909E345623F0147B007E835F /* TDictionaryView.swift */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		909E345223F01282007E835F /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		909E345323F01284007E835F /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		909E345423F01287007E835F /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		909E345523F01289007E835F /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		909E345A23F01644007E835F /* resources */ = {
@@ -422,8 +448,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E6DA59423F6818D00692DA1 /* DictionaryRouter.swift in Sources */,
 				5E6DA58523F4275B00692DA1 /* resources.swift in Sources */,
 				909E348423F04E43007E835F /* TranslatorModuleBuilder.swift in Sources */,
+				5E6DA59623F68EC400692DA1 /* DictionaryTranslation.swift in Sources */,
 				5E6DA58123F3E2E300692DA1 /* LanguageInteractor.swift in Sources */,
 				909E347A23F0351F007E835F /* TTranslatorProtocols.swift in Sources */,
 				909E345923F014B6007E835F /* TTranslatorView.swift in Sources */,
@@ -433,14 +461,18 @@
 				909E343D23F0070A007E835F /* TranslateTest.xcdatamodeld in Sources */,
 				909E343723F0070A007E835F /* ViewController.swift in Sources */,
 				909E345723F0147B007E835F /* TDictionaryView.swift in Sources */,
+				5E6DA58723F67CB500692DA1 /* DictionaryBuilder.swift in Sources */,
 				909E347C23F03707007E835F /* TTranslatorInteractor.swift in Sources */,
 				909E343323F0070A007E835F /* AppDelegate.swift in Sources */,
+				5E6DA59223F6818100692DA1 /* DictionaryInteractor.swift in Sources */,
+				5E6DA59023F6814000692DA1 /* DictionaryPresenter.swift in Sources */,
 				5E6DA57623F3E11000692DA1 /* LanguagesModuleBuilder.swift in Sources */,
 				909E347823F03345007E835F /* TLanguagesView.swift in Sources */,
 				909E343523F0070A007E835F /* SceneDelegate.swift in Sources */,
 				909E347E23F0372F007E835F /* TTranslatorRouter.swift in Sources */,
 				5E6DA57F23F3E2CE00692DA1 /* LangugaePresenter.swift in Sources */,
 				909E348223F037C8007E835F /* TTranslatorPresenter.swift in Sources */,
+				5E6DA58E23F67FD900692DA1 /* DictionaryProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

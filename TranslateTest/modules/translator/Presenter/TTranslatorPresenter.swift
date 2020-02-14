@@ -7,10 +7,18 @@
 //
 
 import Foundation
-import UIKit
 
 
 class TranslatePresenter {
+    
+    //Dictionary put in another folder or file?
+    
+    let langDictionary = [
+        "Английский": "en",
+        "Русский": "ru",
+        "Японский": "ja"
+    ]
+
     
     weak var view: TranslatorViewProtocol?
     var interactor: TranslatorInputInteractorProtocol
@@ -43,18 +51,7 @@ extension TranslatePresenter: TranslatorPresenterProtocol {
     }
     
     private func textToInd(key: String) -> String {
-        //Dictionary put in another folder or file?
         
-        if (key == "Японский"){
-            print("YEEES")
-        }
-        
-        let langDictionary = [
-            "Английский": "en",
-            "Русский": "ru",
-            "Японский": "ja"
-        ]
-
         guard let value = langDictionary[key] else {
             return ""
         }

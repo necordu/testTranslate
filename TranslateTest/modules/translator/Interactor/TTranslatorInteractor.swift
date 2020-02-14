@@ -11,23 +11,6 @@ import UIKit
 import CoreData
 
 class TranslatorInteractor {
-    
-   /* func deleteAllData(_ entity:String) {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        fetchRequest.returnsObjectsAsFaults = false
-        do {
-            let results = try appDelegate.persistentContainer.viewContext.fetch(fetchRequest)
-            for object in results {
-                guard let objectData = object as? NSManagedObject else {continue}
-                appDelegate.persistentContainer.viewContext.delete(objectData)
-            }
-        } catch let error {
-            print("Detele all data in \(entity) error :", error)
-        }
-    }*/
  
     
 }

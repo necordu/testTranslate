@@ -16,9 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         let translatorViewController = TranslatorModuleBuilder.build()
+        let dictionaryViewController = DictionaryModuleBuilder.build()
         
         let tabBar = UITabBarController()
-        tabBar.viewControllers = [translatorViewController, UIViewController(), UIViewController()]
+        tabBar.viewControllers = [translatorViewController, dictionaryViewController, UIViewController()]
         
         window?.rootViewController = tabBar
         window?.makeKeyAndVisible()
