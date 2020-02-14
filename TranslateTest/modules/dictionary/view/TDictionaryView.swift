@@ -12,6 +12,8 @@ class TDictionaryView: UIViewController {
     
     var presenter: DictPresenterProtocol!
     
+    var timer: Timer? = nil
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var historyTableView: UITableView!
@@ -49,6 +51,21 @@ extension TDictionaryView: UITableViewDelegate {
     //        presenter.selectLanguage(language: languages[indexPath.row] as! String)
             
         }
+    
+}
+
+extension TDictionaryView: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        timer?.invalidate()
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { (timer) in
+            self.presenter.getHistory(search: searchText)
+        })
+        
+        
+    }
     
 }
 
