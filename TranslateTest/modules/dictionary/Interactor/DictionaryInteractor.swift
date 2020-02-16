@@ -60,7 +60,7 @@ extension DictionaryInteractor: DictInputInteractorProtocol {
         for task in tasks {
             for word in (task as! Dictionary).words! {
                 if (search.count == 0 || (((word as! Word).name?.contains(search))! || ((word as! Word).translation?.contains(search))!)) {
-                    let dictTranslation = DictionaryTranslation(name: (word as! Word).name!, translation: (word as! Word).translation!)
+                    let dictTranslation = DictionaryTranslation(name: (word as! Word).name!, translation: (word as! Word).translation!, languageTransaction: (word as! Word).langTransaction!)
                     wordsArray.insert(dictTranslation, at: 0)
                 }
             }

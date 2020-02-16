@@ -12,11 +12,13 @@ struct DictionaryTranslation {
     
     var name: String!
     var translation: String!
+    var languageTransaction: String!
     
-    init(name: String, translation: String) {
+    init(name: String, translation: String, languageTransaction: String) {
         
         self.name = name
         self.translation = translation
+        self.languageTransaction = languageTransaction
         
     }
     

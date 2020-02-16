@@ -12,14 +12,15 @@
 		5E6DA57F23F3E2CE00692DA1 /* LangugaePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA57E23F3E2CE00692DA1 /* LangugaePresenter.swift */; };
 		5E6DA58123F3E2E300692DA1 /* LanguageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58023F3E2E300692DA1 /* LanguageInteractor.swift */; };
 		5E6DA58323F3E30200692DA1 /* LanguageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58223F3E30200692DA1 /* LanguageRouter.swift */; };
-		5E6DA58523F4275B00692DA1 /* resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58423F4275B00692DA1 /* resources.swift */; };
 		5E6DA58723F67CB500692DA1 /* DictionaryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58623F67CB500692DA1 /* DictionaryBuilder.swift */; };
 		5E6DA58E23F67FD900692DA1 /* DictionaryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58D23F67FD900692DA1 /* DictionaryProtocols.swift */; };
 		5E6DA59023F6814000692DA1 /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA58F23F6814000692DA1 /* DictionaryPresenter.swift */; };
 		5E6DA59223F6818100692DA1 /* DictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA59123F6818100692DA1 /* DictionaryInteractor.swift */; };
 		5E6DA59423F6818D00692DA1 /* DictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA59323F6818D00692DA1 /* DictionaryRouter.swift */; };
 		5E6DA59623F68EC400692DA1 /* DictionaryTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA59523F68EC400692DA1 /* DictionaryTranslation.swift */; };
-		5E6DA59B23F6C0BB00692DA1 /* DictResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DA59A23F6C0BB00692DA1 /* DictResources.swift */; };
+		901DD5DC23F93E1A005EB45D /* resourcesTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901DD5DB23F93E1A005EB45D /* resourcesTranslate.swift */; };
+		901DD5DE23F93F7B005EB45D /* resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901DD5DD23F93F7B005EB45D /* resources.swift */; };
+		901DD5E023F94E1A005EB45D /* UIResponder+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901DD5DF23F94E1A005EB45D /* UIResponder+Scene.swift */; };
 		909E343323F0070A007E835F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E343223F0070A007E835F /* AppDelegate.swift */; };
 		909E343523F0070A007E835F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E343423F0070A007E835F /* SceneDelegate.swift */; };
 		909E343723F0070A007E835F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E343623F0070A007E835F /* ViewController.swift */; };
@@ -53,14 +54,15 @@
 		5E6DA57E23F3E2CE00692DA1 /* LangugaePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangugaePresenter.swift; sourceTree = "<group>"; };
 		5E6DA58023F3E2E300692DA1 /* LanguageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageInteractor.swift; sourceTree = "<group>"; };
 		5E6DA58223F3E30200692DA1 /* LanguageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRouter.swift; sourceTree = "<group>"; };
-		5E6DA58423F4275B00692DA1 /* resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resources.swift; sourceTree = "<group>"; };
 		5E6DA58623F67CB500692DA1 /* DictionaryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryBuilder.swift; sourceTree = "<group>"; };
 		5E6DA58D23F67FD900692DA1 /* DictionaryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryProtocols.swift; sourceTree = "<group>"; };
 		5E6DA58F23F6814000692DA1 /* DictionaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPresenter.swift; sourceTree = "<group>"; };
 		5E6DA59123F6818100692DA1 /* DictionaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryInteractor.swift; sourceTree = "<group>"; };
 		5E6DA59323F6818D00692DA1 /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
 		5E6DA59523F68EC400692DA1 /* DictionaryTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTranslation.swift; sourceTree = "<group>"; };
-		5E6DA59A23F6C0BB00692DA1 /* DictResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictResources.swift; sourceTree = "<group>"; };
+		901DD5DB23F93E1A005EB45D /* resourcesTranslate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resourcesTranslate.swift; sourceTree = "<group>"; };
+		901DD5DD23F93F7B005EB45D /* resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resources.swift; sourceTree = "<group>"; };
+		901DD5DF23F94E1A005EB45D /* UIResponder+Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Scene.swift"; sourceTree = "<group>"; };
 		909E342F23F0070A007E835F /* TranslateTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TranslateTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		909E343223F0070A007E835F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		909E343423F0070A007E835F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,7 +185,6 @@
 		5E6DA59723F6C08D00692DA1 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				5E6DA59A23F6C0BB00692DA1 /* DictResources.swift */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -313,7 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				909E345B23F01658007E835F /* images */,
-				5E6DA58423F4275B00692DA1 /* resources.swift */,
+				901DD5DB23F93E1A005EB45D /* resourcesTranslate.swift */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -335,6 +336,8 @@
 			isa = PBXGroup;
 			children = (
 				909E346923F02A30007E835F /* images */,
+				901DD5DD23F93F7B005EB45D /* resources.swift */,
+				901DD5DF23F94E1A005EB45D /* UIResponder+Scene.swift */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -460,7 +463,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E6DA59423F6818D00692DA1 /* DictionaryRouter.swift in Sources */,
-				5E6DA58523F4275B00692DA1 /* resources.swift in Sources */,
+				901DD5DE23F93F7B005EB45D /* resources.swift in Sources */,
+				901DD5DC23F93E1A005EB45D /* resourcesTranslate.swift in Sources */,
 				909E348423F04E43007E835F /* TranslatorModuleBuilder.swift in Sources */,
 				5E6DA59623F68EC400692DA1 /* DictionaryTranslation.swift in Sources */,
 				5E6DA58123F3E2E300692DA1 /* LanguageInteractor.swift in Sources */,
@@ -476,6 +480,7 @@
 				909E347C23F03707007E835F /* TTranslatorInteractor.swift in Sources */,
 				909E343323F0070A007E835F /* AppDelegate.swift in Sources */,
 				5E6DA59223F6818100692DA1 /* DictionaryInteractor.swift in Sources */,
+				901DD5E023F94E1A005EB45D /* UIResponder+Scene.swift in Sources */,
 				5E6DA59023F6814000692DA1 /* DictionaryPresenter.swift in Sources */,
 				5E6DA57623F3E11000692DA1 /* LanguagesModuleBuilder.swift in Sources */,
 				909E347823F03345007E835F /* TLanguagesView.swift in Sources */,
@@ -484,7 +489,6 @@
 				5E6DA57F23F3E2CE00692DA1 /* LangugaePresenter.swift in Sources */,
 				909E348223F037C8007E835F /* TTranslatorPresenter.swift in Sources */,
 				5E6DA58E23F67FD900692DA1 /* DictionaryProtocols.swift in Sources */,
-				5E6DA59B23F6C0BB00692DA1 /* DictResources.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

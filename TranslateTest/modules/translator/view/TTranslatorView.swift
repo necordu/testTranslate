@@ -30,6 +30,7 @@ class TTranslatorView: UIViewController {
         
         inText = inLang.titleLabel!.text
         outText = outLang.titleLabel!.text
+        NotificationCenter.default.addObserver(self, selector: #selector(putWords(_:)), name: .didWordSelected, object: nil)
         
         self.presenter.viewDidLoad()
     }
@@ -61,6 +62,27 @@ class TTranslatorView: UIViewController {
 
 }
     
+    @objc func putWords(_ notification: NSNotification) {
+        
+        guard let name =  notification.userInfo!["name"] as? String, let translation = notification.userInfo!["translation"] as? String, let languageTransaction = notification.userInfo!["languageTransaction"] as? String else {return}
+        
+        trnslateTextView.text = name
+        translationTextView.text = translation
+        let tupleLanguage = presenter.parseLanguageString(string: languageTransaction)
+        inLang.setTitle(tupleLanguage.0, for: .normal)
+        outLang.setTitle(tupleLanguage.1, for: .normal)
+        
+        
+        
+        
+    }
+    
+    deinit{
+               
+               NotificationCenter.default.removeObserver(self, name: .didWordSelected, object: nil)
+               
+           }
+    
     /*
     // MARK: - Navigation
 
@@ -91,7 +113,7 @@ extension TTranslatorView: UITextViewDelegate {
             timeInterval: 1.0,
             target: self,
             selector: #selector(sendToTranslate),
-            userInfo: ["textView": trnslateTextView],
+            userInfo: nil,
             repeats: false)
         
     }

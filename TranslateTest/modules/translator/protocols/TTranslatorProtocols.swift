@@ -25,6 +25,7 @@ protocol TranslatorPresenterProtocol {
     func viewDidLoad()
     func getTranslation(text: String, lang: String)
     func langDefine(textLangIn:String, textLangOut: String) -> String
+    func parseLanguageString(string: String) -> (String, String)
     func presentLanguages()
     
 }
@@ -32,7 +33,7 @@ protocol TranslatorPresenterProtocol {
 protocol TranslatorInputInteractorProtocol {
     
     func getTranslation(text: String, lang: String, completionBlock: @escaping(Translator?, Error?) -> ()) -> Void
-    func saveTranslation(name: String?, translation: String?)
+    func saveTranslation(name: String?, translation: String?, language: String?)
     
 }
 

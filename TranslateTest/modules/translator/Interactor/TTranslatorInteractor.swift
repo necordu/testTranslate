@@ -53,7 +53,7 @@ extension TranslatorInteractor: TranslatorInputInteractorProtocol {
         task.resume()
     }
     
-    func saveTranslation(name: String?, translation: String?){
+    func saveTranslation(name: String?, translation: String?, language: String?){
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
@@ -72,6 +72,7 @@ extension TranslatorInteractor: TranslatorInputInteractorProtocol {
             guard let name = name, let translation = translation else { return}
             word.name = name
             word.translation = translation
+            word.langTransaction = language
             
             words.add(word)
             

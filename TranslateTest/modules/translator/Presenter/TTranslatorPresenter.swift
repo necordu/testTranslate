@@ -18,6 +18,12 @@ class TranslatePresenter {
         "Русский": "ru",
         "Японский": "ja"
     ]
+    #warning ("change to reverse Dictionary by code")
+    let reverseLangDictionary = [
+        "en": "Английский",
+        "ru": "Русский",
+        "ja": "Японский"
+    ]
 
     
     weak var view: TranslatorViewProtocol?
@@ -50,6 +56,22 @@ extension TranslatePresenter: TranslatorPresenterProtocol {
         return inInd + "-" + outInd
     }
     
+    func parseLanguageString(string: String) -> (String, String) {
+        
+        if string.contains("-") {
+            
+            let stringSplt = string.split(separator: "-")
+            let langFirst:String = String(stringSplt[0])
+            let langLast: String = String(stringSplt[1])
+            return (reverseLangDictionary[langFirst]!, reverseLangDictionary[langLast]!)
+            
+            
+        } else {
+            return ("ErrorString","ErrorString")
+        }
+        
+    }
+    
     private func textToInd(key: String) -> String {
         
         guard let value = langDictionary[key] else {
@@ -76,7 +98,7 @@ extension TranslatePresenter: TranslatorPresenterProtocol {
                     self?.view?.showTranslate(with: translateObj.text.first!)
                     if (translateObj.text.first!.count != 0 && translateObj.text.first! != text) {
                         //   DispatchQueue.global().async {
-                            self?.interactor.saveTranslation(name: text, translation: translateObj.text.first!)
+                            self?.interactor.saveTranslation(name: text, translation: translateObj.text.first!, language: lang)
                        // }
                     }
                 } else {

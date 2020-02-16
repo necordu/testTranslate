@@ -56,6 +56,16 @@ extension TDictionaryView: UITableViewDelegate {
     
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
+            guard let tabBar = self.view.window?.rootViewController as? UITabBarController else { return }
+            tabBar.selectedIndex = 0
+            
+            let word = translationArr[indexPath.row]
+            let wordNotificationData: [String: String] = ["name": word.name, "translation": word.translation, "languageTransaction": word.languageTransaction]
+            NotificationCenter.default.post(name: .didWordSelected, object: nil, userInfo: wordNotificationData)
+            
+            // if let tabBarController = //appDelegate.window!.rootViewController as? UITabBarController {
+               // tabBarController.selectedIndex = 1
+           // }
     //        guard let languages = langArray else {
     //            return
     //        }
