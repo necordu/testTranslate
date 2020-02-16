@@ -29,9 +29,6 @@ class TLanguagesView: UIViewController {
         
     }
     
-    deinit {
-        print("deinited all")
-    }
 }
 
 extension TLanguagesView: LangViewProtocol{

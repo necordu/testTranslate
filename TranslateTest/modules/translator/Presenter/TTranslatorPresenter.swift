@@ -50,6 +50,7 @@ extension TranslatePresenter: TranslatorPresenterProtocol {
     
     func langDefine(textLangIn: String, textLangOut: String) -> String {
         
+        print("define")
         let inInd = textToInd(key: textLangIn)
         let outInd = textToInd(key: textLangOut)
         

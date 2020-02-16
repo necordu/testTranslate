@@ -11,7 +11,7 @@ import UIKit
 
 class LanguageRouter {
     
-    var viewController: UIViewController!
+    unowned var viewController: UIViewController!
     
     init(view: UIViewController) {
         self.viewController = view

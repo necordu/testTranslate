@@ -132,7 +132,6 @@ extension TTranslatorView: UITextViewDelegate {
 //show language (?Should be in presenter?)
 extension TTranslatorView: LangDelegate {
     func changeLanguage(language: String) {
-        print(language)
         switch translateDirection {
         case .inTr:
             if language != outLang.titleLabel?.text {

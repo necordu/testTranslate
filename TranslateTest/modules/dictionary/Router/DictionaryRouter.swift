@@ -12,7 +12,7 @@ import UIKit
 
 class DictionaryRouter {
     
-    var viewController: TDictionaryView!
+    unowned var viewController: TDictionaryView!
     
     init(view: TDictionaryView) {
         self.viewController = view
