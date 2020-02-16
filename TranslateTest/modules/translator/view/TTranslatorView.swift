@@ -137,6 +137,7 @@ extension TTranslatorView: LangDelegate {
             if language != outLang.titleLabel?.text {
                 inLang.setTitle(language, for: .normal)
                 inText = language
+                self.sendToTranslate()
             } else {
                 self.changeLang(changeLangButton!)
             }
@@ -144,13 +145,13 @@ extension TTranslatorView: LangDelegate {
             if language != inLang.titleLabel?.text {
                 outLang.setTitle(language, for: .normal)
                 outText = language
+                self.sendToTranslate()
             } else {
                 self.changeLang(changeLangButton!)
             }
         default:
             break
         }
-        self.sendToTranslate()
     }
     
 }
