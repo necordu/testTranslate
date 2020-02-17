@@ -37,7 +37,6 @@ extension LanguagePresenter: LangPresenterProtocol {
     }
     
     func dismissLang() {
-        delegate = nil
         router.dismissLang()
     }
     

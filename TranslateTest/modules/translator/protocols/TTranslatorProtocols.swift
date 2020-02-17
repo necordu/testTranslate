@@ -40,7 +40,5 @@ protocol TranslatorInputInteractorProtocol {
 protocol TranslatorRouterProtocol {
     
     func presentLanguageList()
-//    func presentLanguageList(from view: UIViewController)
-//    static func createTranslatorModule(TranslatorRef: TTranslatorView)
     
 }
