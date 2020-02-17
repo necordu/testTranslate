@@ -73,6 +73,13 @@ extension TranslatePresenter: TranslatorPresenterProtocol {
         
     }
     
+    /**
+        Перевод языка из текстового формата в идентификатор
+            - Parameters:
+                - key: Язык в текстовом формате
+            - returns:
+                Строка содержащая идентификатор языка
+     */
     private func textToInd(key: String) -> String {
         
         guard let value = langDictionary[key] else {

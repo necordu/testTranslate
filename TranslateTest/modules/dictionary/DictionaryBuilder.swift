@@ -11,6 +11,11 @@ import UIKit
 
 class DictionaryModuleBuilder {
     
+    /**
+        Создание компонентов ViewController для экрана истории перевода под архитектуру VIPER
+     - returns:
+        Контроллер типа TDictionaryView для отображения
+    */
     static func build() -> TDictionaryView {
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)

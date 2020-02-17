@@ -37,7 +37,7 @@ class TDictionaryView: UIViewController {
         let alert = UIAlertController(title: "Прежупреждение", message: "Вы хотите удалить всю историю?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Да", style: .default, handler: { action in
 
-            self.presenter.clereDB()
+            self.presenter.clearDB()
 
         }))
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))

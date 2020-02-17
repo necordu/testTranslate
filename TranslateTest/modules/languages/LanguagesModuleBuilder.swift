@@ -11,7 +11,13 @@ import UIKit
 
 class LanguageModuleBuilder {
     
-    
+    /**
+        Создание компонентов ViewController для экрана выбора языка под архитектуру VIPER
+        - Parameters:
+            - delegate: Делегат для изменения языка на экране перевода
+        - returns:
+            Контроллер типа TLanguagesView для отображения
+    */
     static func build(delegate: LangDelegate) -> TLanguagesView {
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)

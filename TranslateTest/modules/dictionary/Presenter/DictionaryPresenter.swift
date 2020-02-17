@@ -31,7 +31,7 @@ extension DictionaryPresenter: DictPresenterProtocol {
         
     }
     
-    func clereDB() {
+    func clearDB() {
             
         interactor.clearDB()
         view?.showWords(words: [])
@@ -41,12 +41,6 @@ extension DictionaryPresenter: DictPresenterProtocol {
     func getHistory(search: String) {
         
         view?.showWords(words: interactor.getTranslation_coreData(search: search))
-        
-    }
-    
-    func searchWord(word: String) -> [DictionaryTranslation] {
-        
-        return []
         
     }
     

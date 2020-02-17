@@ -11,6 +11,11 @@ import UIKit
 
 class TranslatorModuleBuilder {
     
+    /**
+        Создание компонентов ViewController для экрана истории перевода под архитектуру VIPER
+         - returns:
+            Контроллер типа TTranslatorView для отображения
+    */
     static func build() -> TTranslatorView {
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
