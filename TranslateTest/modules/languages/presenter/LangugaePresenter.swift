@@ -2,7 +2,7 @@
 //  LangugaePresenter.swift
 //  TranslateTest
 //
-//  Created by Greenatom on 12.02.2020.
+//  Created by Егор Редько on 12.02.2020.
 //  Copyright © 2020 necordu. All rights reserved.
 //
 

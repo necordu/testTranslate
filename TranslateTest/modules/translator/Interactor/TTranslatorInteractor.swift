@@ -69,10 +69,10 @@ extension TranslatorInteractor: TranslatorInputInteractorProtocol {
             
             let words = dictionary.mutableSetValue(forKey: #keyPath(Dictionary.words))
             
-            guard let name = name, let translation = translation else { return}
+            guard let name = name, let translation = translation, let langTransaction = language  else { return }
             word.name = name
             word.translation = translation
-            word.langTransaction = language
+            word.langTransaction = langTransaction
             
             words.add(word)
             

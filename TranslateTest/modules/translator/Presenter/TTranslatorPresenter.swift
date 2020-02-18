@@ -105,9 +105,7 @@ extension TranslatePresenter: TranslatorPresenterProtocol {
                 if (translateObj.code == 200) {
                     self?.view?.showTranslate(with: translateObj.text.first!)
                     if (translateObj.text.first!.count != 0 && translateObj.text.first! != text) {
-                        //   DispatchQueue.global().async {
                             self?.interactor.saveTranslation(name: text, translation: translateObj.text.first!, language: lang)
-                       // }
                     }
                 } else {
                     self?.view?.showTranslate(with: "")
